@@ -1,0 +1,210 @@
+Reading data...
+There is no pre-trained latent factors for client 0
+Data reading time:  3.209406852722168
+GPU_INDEX: 0
+DATASET: ML-1M
+MODEL: LGCN
+LR: 0.0005
+LAMDA: 0.02
+LAYER: 2
+EMB_DIM: 64
+BATCH_SIZE: 4096
+TEST_USER_BATCH: -1
+N_EPOCH: 200
+IF_PRETRAIN: False
+TEST_VALIDATION: Test
+TOP_K: 20
+FREQUENCY_USER: 100
+FREQUENCY_ITEM: 50
+FREQUENCY: 64
+KEEP_PORB: 0.9
+SAMPLE_RATE: 1
+GRAPH_CONV: 1D
+PREDICTION: MLP3
+LOSS_FUNCTION: BC
+GENERALIZATION: Regularization
+OPTIMIZATION: RMSProp
+IF_TRASFORMATION: False
+ACTIVATION: None
+POOLING: MLP3
+NUM_CLIENTS: 4
+USER_NUM: 6022
+SEED: 42
+RANDOMGRAPH_TYPE: gnmk
+FED_RATIO: ['rg', 'per']
+FED_METHOD: lpsfed
+GLOBAL_UPDATE_EPOCH: 15
+COLD_THRESHOLD: 10
+tau1: 0.07
+tau2: 0.08
+w_lambda: 0
+freeze_epoch: 10
+margin_ratio: 0.5
+gamma: 1.0
+omega: 0.5
+Computed degree information for client 1 from training data
+Computed degree information for client 2 from training data
+Computed degree information for client 3 from training data
+Computed degree information for client 4 from training data
+KL Divergence between random distribution and distribution of client 1 : 0.07584364138075939
+KL Divergence between random distribution and distribution of client 2 : 0.08813269251560846
+KL Divergence between random distribution and distribution of client 3 : 0.07666841181044365
+KL Divergence between random distribution and distribution of client 4 : 0.1052286561048973
+Federated Ratio: ['rg', 'per']
+KL Divergence Values: [0.2792491685425065, 0.16246490473323838, 0.2714112804594154, 0.0]
+Start Training
+Client 1 , epochs: 15 , Val F1 -  0.0035 , Val Recall -  0.0067 , Val NDCG -  0.0031 , Test F1 -  0.0077 , Test Recall -  0.0213 , Test NDCG -  0.0158
+Client 2 , epochs: 15 , Val F1 -  0.0006 , Val Recall -  0.0008 , Val NDCG -  0.0005 , Test F1 -  0.0122 , Test Recall -  0.0359 , Test NDCG -  0.0156
+Client 3 , epochs: 15 , Val F1 -  0.0027 , Val Recall -  0.0054 , Val NDCG -  0.0024 , Test F1 -  0.0101 , Test Recall -  0.0314 , Test NDCG -  0.0232
+Client 4 , epochs: 15 , Val F1 -  0.0126 , Val Recall -  0.0436 , Val NDCG -  0.0146 , Test F1 -  0.014 , Test Recall -  0.0362 , Test NDCG -  0.0192
+ 
+KL Divergence between random distribution and distribution of client 1 : 0.3919659657225664
+KL Divergence between random distribution and distribution of client 2 : 0.37840789345312287
+KL Divergence between random distribution and distribution of client 3 : 0.396920886846515
+KL Divergence between random distribution and distribution of client 4 : 0.5116736869274797
+Federated Ratio: ['rg', 'per']
+KL Divergence Values: [0.23395324845359822, 0.26045074601079654, 0.2242694963855525, 0.0]
+Client 1 , epochs: 30 , Val F1 -  0.0035 , Val Recall -  0.0069 , Val NDCG -  0.0031 , Test F1 -  0.0077 , Test Recall -  0.0213 , Test NDCG -  0.0168
+Client 2 , epochs: 30 , Val F1 -  0.0006 , Val Recall -  0.0008 , Val NDCG -  0.0005 , Test F1 -  0.0122 , Test Recall -  0.0359 , Test NDCG -  0.0156
+Client 3 , epochs: 30 , Val F1 -  0.0027 , Val Recall -  0.0054 , Val NDCG -  0.0024 , Test F1 -  0.0101 , Test Recall -  0.0314 , Test NDCG -  0.0232
+Client 4 , epochs: 30 , Val F1 -  0.0126 , Val Recall -  0.0436 , Val NDCG -  0.0146 , Test F1 -  0.014 , Test Recall -  0.0362 , Test NDCG -  0.025
+ 
+KL Divergence between random distribution and distribution of client 1 : 0.36855670772556537
+KL Divergence between random distribution and distribution of client 2 : 0.3932328167150662
+KL Divergence between random distribution and distribution of client 3 : 0.36086239584494956
+KL Divergence between random distribution and distribution of client 4 : 0.41719009080728997
+Federated Ratio: ['rg', 'per']
+KL Divergence Values: [0.11657367745148461, 0.05742531910541038, 0.13501685731159785, 0.0]
+Client 1 , epochs: 45 , Val F1 -  0.0035 , Val Recall -  0.0069 , Val NDCG -  0.0031 , Test F1 -  0.0077 , Test Recall -  0.0213 , Test NDCG -  0.0175
+Client 2 , epochs: 45 , Val F1 -  0.0006 , Val Recall -  0.0008 , Val NDCG -  0.0005 , Test F1 -  0.0122 , Test Recall -  0.0359 , Test NDCG -  0.0156
+Client 3 , epochs: 45 , Val F1 -  0.0027 , Val Recall -  0.0054 , Val NDCG -  0.0024 , Test F1 -  0.0101 , Test Recall -  0.0314 , Test NDCG -  0.0232
+Client 4 , epochs: 45 , Val F1 -  0.0126 , Val Recall -  0.0436 , Val NDCG -  0.0146 , Test F1 -  0.014 , Test Recall -  0.0362 , Test NDCG -  0.0251
+ 
+KL Divergence between random distribution and distribution of client 1 : 0.385599393176923
+KL Divergence between random distribution and distribution of client 2 : 0.39628563608223505
+KL Divergence between random distribution and distribution of client 3 : 0.388376845119887
+KL Divergence between random distribution and distribution of client 4 : 0.40995983152847937
+Federated Ratio: ['rg', 'per']
+KL Divergence Values: [0.059421524935093784, 0.03335496405894678, 0.05264658815016854, 0.0]
+Client 1 , epochs: 60 , Val F1 -  0.0035 , Val Recall -  0.0069 , Val NDCG -  0.0031 , Test F1 -  0.0077 , Test Recall -  0.0213 , Test NDCG -  0.0176
+Client 2 , epochs: 60 , Val F1 -  0.0007 , Val Recall -  0.0009 , Val NDCG -  0.0005 , Test F1 -  0.0122 , Test Recall -  0.0359 , Test NDCG -  0.0156
+Client 3 , epochs: 60 , Val F1 -  0.0027 , Val Recall -  0.0054 , Val NDCG -  0.0024 , Test F1 -  0.0101 , Test Recall -  0.0314 , Test NDCG -  0.0299
+Client 4 , epochs: 60 , Val F1 -  0.0126 , Val Recall -  0.0436 , Val NDCG -  0.0146 , Test F1 -  0.014 , Test Recall -  0.0362 , Test NDCG -  0.0252
+ 
+KL Divergence between random distribution and distribution of client 1 : 0.3687676863684515
+KL Divergence between random distribution and distribution of client 2 : 0.3765815854067326
+KL Divergence between random distribution and distribution of client 3 : 0.3876273899404078
+KL Divergence between random distribution and distribution of client 4 : 0.3909435382655784
+Federated Ratio: ['rg', 'per']
+KL Divergence Values: [0.05672392488058542, 0.036736642131400044, 0.008482422653365074, 0.0]
+Client 1 , epochs: 75 , Val F1 -  0.0035 , Val Recall -  0.0069 , Val NDCG -  0.0031 , Test F1 -  0.0077 , Test Recall -  0.0213 , Test NDCG -  0.0176
+Client 2 , epochs: 75 , Val F1 -  0.0007 , Val Recall -  0.0009 , Val NDCG -  0.0005 , Test F1 -  0.0122 , Test Recall -  0.0359 , Test NDCG -  0.0156
+Client 3 , epochs: 75 , Val F1 -  0.0027 , Val Recall -  0.0054 , Val NDCG -  0.0024 , Test F1 -  0.0101 , Test Recall -  0.0314 , Test NDCG -  0.0299
+Client 4 , epochs: 75 , Val F1 -  0.0126 , Val Recall -  0.0436 , Val NDCG -  0.0146 , Test F1 -  0.014 , Test Recall -  0.0362 , Test NDCG -  0.0255
+ 
+KL Divergence between random distribution and distribution of client 1 : 0.38159248852274696
+KL Divergence between random distribution and distribution of client 2 : 0.3854820556057485
+KL Divergence between random distribution and distribution of client 3 : 0.3848154947500722
+KL Divergence between random distribution and distribution of client 4 : 0.3926584928116545
+Federated Ratio: ['rg', 'per']
+KL Divergence Values: [0.02818226140906499, 0.01827653632172499, 0.019974095060117047, 0.0]
+Client 1 , epochs: 90 , Val F1 -  0.0036 , Val Recall -  0.0069 , Val NDCG -  0.0031 , Test F1 -  0.0077 , Test Recall -  0.0213 , Test NDCG -  0.0176
+Client 2 , epochs: 90 , Val F1 -  0.0008 , Val Recall -  0.0011 , Val NDCG -  0.0006 , Test F1 -  0.0122 , Test Recall -  0.0359 , Test NDCG -  0.0156
+Client 3 , epochs: 90 , Val F1 -  0.0027 , Val Recall -  0.0054 , Val NDCG -  0.0024 , Test F1 -  0.0101 , Test Recall -  0.0314 , Test NDCG -  0.0299
+Client 4 , epochs: 90 , Val F1 -  0.0126 , Val Recall -  0.0436 , Val NDCG -  0.0146 , Test F1 -  0.014 , Test Recall -  0.0362 , Test NDCG -  0.0259
+ 
+KL Divergence between random distribution and distribution of client 1 : 0.38344796611489423
+KL Divergence between random distribution and distribution of client 2 : 0.39454252832261016
+KL Divergence between random distribution and distribution of client 3 : 0.3957773111044597
+KL Divergence between random distribution and distribution of client 4 : 0.40809750099394676
+Federated Ratio: ['rg', 'per']
+KL Divergence Values: [0.06040109243260994, 0.03321503473636234, 0.0301893294114286, 0.0]
+Client 1 , epochs: 105 , Val F1 -  0.0036 , Val Recall -  0.0069 , Val NDCG -  0.0031 , Test F1 -  0.0077 , Test Recall -  0.0213 , Test NDCG -  0.0176
+Client 2 , epochs: 105 , Val F1 -  0.0008 , Val Recall -  0.0011 , Val NDCG -  0.0006 , Test F1 -  0.0122 , Test Recall -  0.0359 , Test NDCG -  0.0156
+Client 3 , epochs: 105 , Val F1 -  0.0027 , Val Recall -  0.0054 , Val NDCG -  0.0024 , Test F1 -  0.0101 , Test Recall -  0.0314 , Test NDCG -  0.0299
+Client 4 , epochs: 105 , Val F1 -  0.0126 , Val Recall -  0.0436 , Val NDCG -  0.0146 , Test F1 -  0.014 , Test Recall -  0.0362 , Test NDCG -  0.0259
+ 
+KL Divergence between random distribution and distribution of client 1 : 0.3982660504978939
+KL Divergence between random distribution and distribution of client 2 : 0.3997340663763372
+KL Divergence between random distribution and distribution of client 3 : 0.39941913823933156
+KL Divergence between random distribution and distribution of client 4 : 0.4113064354198498
+Federated Ratio: ['rg', 'per']
+KL Divergence Values: [0.03170479185098252, 0.02813563816889919, 0.028901315799700567, 0.0]
+Client 1 , epochs: 120 , Val F1 -  0.0036 , Val Recall -  0.0069 , Val NDCG -  0.0031 , Test F1 -  0.0077 , Test Recall -  0.0213 , Test NDCG -  0.0176
+Client 2 , epochs: 120 , Val F1 -  0.0008 , Val Recall -  0.0011 , Val NDCG -  0.0006 , Test F1 -  0.0129 , Test Recall -  0.0382 , Test NDCG -  0.0158
+Client 3 , epochs: 120 , Val F1 -  0.0027 , Val Recall -  0.0054 , Val NDCG -  0.0024 , Test F1 -  0.0101 , Test Recall -  0.0314 , Test NDCG -  0.0299
+Client 4 , epochs: 120 , Val F1 -  0.0126 , Val Recall -  0.0436 , Val NDCG -  0.0146 , Test F1 -  0.014 , Test Recall -  0.0362 , Test NDCG -  0.0259
+ 
+KL Divergence between random distribution and distribution of client 1 : 0.397600773172189
+KL Divergence between random distribution and distribution of client 2 : 0.404166633401612
+KL Divergence between random distribution and distribution of client 3 : 0.40083634582499494
+KL Divergence between random distribution and distribution of client 4 : 0.42160914729117105
+Federated Ratio: ['rg', 'per']
+KL Divergence Values: [0.05694462341065243, 0.041371289028302116, 0.04927028172809078, 0.0]
+Client 1 , epochs: 135 , Val F1 -  0.0036 , Val Recall -  0.0069 , Val NDCG -  0.0031 , Test F1 -  0.0077 , Test Recall -  0.0213 , Test NDCG -  0.0176
+Client 2 , epochs: 135 , Val F1 -  0.0008 , Val Recall -  0.0011 , Val NDCG -  0.0006 , Test F1 -  0.0136 , Test Recall -  0.0407 , Test NDCG -  0.0232
+Client 3 , epochs: 135 , Val F1 -  0.0027 , Val Recall -  0.0054 , Val NDCG -  0.0024 , Test F1 -  0.0101 , Test Recall -  0.0314 , Test NDCG -  0.0299
+Client 4 , epochs: 135 , Val F1 -  0.0126 , Val Recall -  0.0436 , Val NDCG -  0.0146 , Test F1 -  0.014 , Test Recall -  0.0362 , Test NDCG -  0.0259
+ 
+KL Divergence between random distribution and distribution of client 1 : 0.39955480232951496
+KL Divergence between random distribution and distribution of client 2 : 0.4101698994217715
+KL Divergence between random distribution and distribution of client 3 : 0.4010708788821051
+KL Divergence between random distribution and distribution of client 4 : 0.4222450720214888
+Federated Ratio: ['rg', 'per']
+KL Divergence Values: [0.0537372042812595, 0.028597545358925558, 0.050146690967908136, 0.0]
+Client 1 , epochs: 150 , Val F1 -  0.0036 , Val Recall -  0.0069 , Val NDCG -  0.0031 , Test F1 -  0.0077 , Test Recall -  0.0213 , Test NDCG -  0.0176
+Client 2 , epochs: 150 , Val F1 -  0.0008 , Val Recall -  0.0011 , Val NDCG -  0.0006 , Test F1 -  0.0136 , Test Recall -  0.0407 , Test NDCG -  0.0232
+Client 3 , epochs: 150 , Val F1 -  0.0027 , Val Recall -  0.0054 , Val NDCG -  0.0024 , Test F1 -  0.0101 , Test Recall -  0.0314 , Test NDCG -  0.0299
+Client 4 , epochs: 150 , Val F1 -  0.0126 , Val Recall -  0.0436 , Val NDCG -  0.0146 , Test F1 -  0.014 , Test Recall -  0.0362 , Test NDCG -  0.0259
+ 
+KL Divergence between random distribution and distribution of client 1 : 0.40036655451312037
+KL Divergence between random distribution and distribution of client 2 : 0.40874248837574173
+KL Divergence between random distribution and distribution of client 3 : 0.4012151882826453
+KL Divergence between random distribution and distribution of client 4 : 0.42823595682171145
+Federated Ratio: ['rg', 'per']
+KL Divergence Values: [0.06507954753597212, 0.045520391586560516, 0.06309785086616582, 0.0]
+Client 1 , epochs: 165 , Val F1 -  0.0036 , Val Recall -  0.0069 , Val NDCG -  0.0031 , Test F1 -  0.0077 , Test Recall -  0.0213 , Test NDCG -  0.0176
+Client 2 , epochs: 165 , Val F1 -  0.0008 , Val Recall -  0.0011 , Val NDCG -  0.0006 , Test F1 -  0.0136 , Test Recall -  0.0407 , Test NDCG -  0.0232
+Client 3 , epochs: 165 , Val F1 -  0.0027 , Val Recall -  0.0054 , Val NDCG -  0.0024 , Test F1 -  0.0101 , Test Recall -  0.0314 , Test NDCG -  0.0299
+Client 4 , epochs: 165 , Val F1 -  0.0126 , Val Recall -  0.0436 , Val NDCG -  0.0146 , Test F1 -  0.014 , Test Recall -  0.0362 , Test NDCG -  0.0259
+ 
+KL Divergence between random distribution and distribution of client 1 : 0.4003734111826017
+KL Divergence between random distribution and distribution of client 2 : 0.4121635832076536
+KL Divergence between random distribution and distribution of client 3 : 0.4012755645297105
+KL Divergence between random distribution and distribution of client 4 : 0.4293805781977142
+Federated Ratio: ['rg', 'per']
+KL Divergence Values: [0.06755584320293995, 0.04009728400461743, 0.06545478555637496, 0.0]
+Client 1 , epochs: 180 , Val F1 -  0.0036 , Val Recall -  0.0069 , Val NDCG -  0.0031 , Test F1 -  0.0077 , Test Recall -  0.0213 , Test NDCG -  0.0176
+Client 2 , epochs: 180 , Val F1 -  0.0008 , Val Recall -  0.0011 , Val NDCG -  0.0006 , Test F1 -  0.0136 , Test Recall -  0.0407 , Test NDCG -  0.0232
+Client 3 , epochs: 180 , Val F1 -  0.0027 , Val Recall -  0.0054 , Val NDCG -  0.0024 , Test F1 -  0.0101 , Test Recall -  0.0314 , Test NDCG -  0.0299
+Client 4 , epochs: 180 , Val F1 -  0.0126 , Val Recall -  0.0436 , Val NDCG -  0.0146 , Test F1 -  0.014 , Test Recall -  0.0362 , Test NDCG -  0.0259
+ 
+KL Divergence between random distribution and distribution of client 1 : 0.4003890826815233
+KL Divergence between random distribution and distribution of client 2 : 0.41250882294715396
+KL Divergence between random distribution and distribution of client 3 : 0.4012756209696967
+KL Divergence between random distribution and distribution of client 4 : 0.4294953772027564
+Federated Ratio: ['rg', 'per']
+KL Divergence Values: [0.06776858626697757, 0.039550028142871896, 0.06570444696483346, 0.0]
+Client 1 , epochs: 195 , Val F1 -  0.0036 , Val Recall -  0.0069 , Val NDCG -  0.0031 , Test F1 -  0.0077 , Test Recall -  0.0213 , Test NDCG -  0.0176
+Client 2 , epochs: 195 , Val F1 -  0.0008 , Val Recall -  0.0011 , Val NDCG -  0.0006 , Test F1 -  0.0136 , Test Recall -  0.0407 , Test NDCG -  0.0232
+Client 3 , epochs: 195 , Val F1 -  0.0027 , Val Recall -  0.0054 , Val NDCG -  0.0024 , Test F1 -  0.0101 , Test Recall -  0.0314 , Test NDCG -  0.0299
+Client 4 , epochs: 195 , Val F1 -  0.0126 , Val Recall -  0.0436 , Val NDCG -  0.0146 , Test F1 -  0.014 , Test Recall -  0.0362 , Test NDCG -  0.0259
+ 
+KL Divergence between random distribution and distribution of client 1 : 0.40039350027992987
+KL Divergence between random distribution and distribution of client 2 : 0.41252312750290804
+KL Divergence between random distribution and distribution of client 3 : 0.40127563892788976
+KL Divergence between random distribution and distribution of client 4 : 0.4296948621333283
+Federated Ratio: ['rg', 'per']
+KL Divergence Values: [0.06819109194818962, 0.03996262497802949, 0.06613814990559619, 0.0]
+Training Finished
+Time: 218.75028586387634
+
+=== Final Results ===
+Client 1 - Validation: F1=0.0036, Recall=0.0069, NDCG=0.0031
+Client 1 - Test: F1=0.0077, Recall=0.0213, NDCG=0.0176
+Client 2 - Validation: F1=0.0008, Recall=0.0011, NDCG=0.0006
+Client 2 - Test: F1=0.0136, Recall=0.0407, NDCG=0.0232
+Client 3 - Validation: F1=0.0027, Recall=0.0054, NDCG=0.0024
+Client 3 - Test: F1=0.0101, Recall=0.0314, NDCG=0.0299
+Client 4 - Validation: F1=0.0126, Recall=0.0436, NDCG=0.0146
+Client 4 - Test: F1=0.014, Recall=0.0362, NDCG=0.0259

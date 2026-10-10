@@ -60,11 +60,16 @@ def test_model(model, para_test):
     
     para_test_one_user = [test_data, TOP_K_list]
 
-    user_top_items = torch.zeros((TEST_USER_BATCH, max_k), dtype=torch.int32)
-    test_batch = np.random.choice(user_num, TEST_USER_BATCH, replace=False)
+    if TEST_USER_BATCH is None or TEST_USER_BATCH <= 0 or TEST_USER_BATCH > user_num:
+        n_eval = user_num
+        test_batch = np.arange(user_num)          # all users, deterministic
+    else:
+        n_eval = TEST_USER_BATCH
+        test_batch = np.random.choice(user_num, n_eval, replace=False)
+    user_top_items = torch.zeros((n_eval, max_k), dtype=torch.int32)
     mini_batch_num = 100
-    mini_batch_list = list(range(0, TEST_USER_BATCH, mini_batch_num))
-    mini_batch_list.append(TEST_USER_BATCH)
+    mini_batch_list = list(range(0, n_eval, mini_batch_num))
+    mini_batch_list.append(n_eval)
     score_min = -1
 
     for u in range(len(mini_batch_list) - 1):

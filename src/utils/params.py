@@ -1,7 +1,8 @@
 model = 1           # 0:MF, 1:LGCN
 dataset = 2         # 0:Amazon, 1:Gowalla, 2:ML-1M, 3:Yelp, 4:Tmall
 pred_dim = 64       # predictive embedding dimensionality 
-seed = 42
+import os as _os
+seed = int(_os.environ.get("LPSFED_SEED", 42))
 
 ## parameters about experiment setting
 GPU_INDEX = 0
@@ -31,7 +32,7 @@ LAYER = LAYER_list[dataset][model]
 EMB_list = [pred_dim, pred_dim]
 EMB_DIM = EMB_list[model]
 BATCH_SIZE = 4096
-TEST_USER_BATCH_list = [32, 128, 32, 64, 512]
+TEST_USER_BATCH_list = [32, 128, -1, 64, 512]  # ML-1M: -1 = all users
 TEST_USER_BATCH = TEST_USER_BATCH_list[dataset]
 N_EPOCH = 200
 IF_PRETRAIN = [False, True][1]
