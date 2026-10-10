@@ -69,7 +69,8 @@ def read_subgraph(path, real_user_num):
     
     item_nodes = sorted([int(item)-real_user_num for item in item_nodes])
     
-    return data, interactions, user_num, item_num, item_nodes
+    user_ids = sorted(int(u) for u in user_nodes)
+    return data, interactions, user_num, item_num, item_nodes, user_ids
     
 
 def read_bases(path, fre_u, fre_v):
@@ -129,8 +130,8 @@ def read_all_data(all_para, randgraph_type):
     
     print('Reading data...')
     for i in range(NUM_CLIENTS):
-        [train_data, train_data_interaction, user_num, item_num, item_nodes] = read_subgraph(train_paths[i], USER_NUM)
-        train = [train_data, train_data_interaction, user_num, item_num, item_nodes]
+        [train_data, train_data_interaction, user_num, item_num, item_nodes, user_ids] = read_subgraph(train_paths[i], USER_NUM)
+        train = [train_data, train_data_interaction, user_num, item_num, item_nodes, user_ids]
         train_datas.append(train)
         
         # Read test data

@@ -4,7 +4,10 @@ import random as rd
 import networkx as nx
 import random
 import torch
-from .params import USER_NUM, COLD_THRESHOLD
+try:
+    from .params import USER_NUM, COLD_THRESHOLD
+except ImportError:
+    from params import USER_NUM, COLD_THRESHOLD
 
 def read_data_new(path):
     with open(path) as f:

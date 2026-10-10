@@ -78,12 +78,12 @@ class MakeSubgraph():
         if clustering_method == 'spectral':
             user_adjacency_matrix = adjacency_array[:user_num, :user_num]
             user_spectral = SpectralClustering(n_clusters=num_clients, affinity='precomputed', 
-                                             n_init=100, assign_labels='discretize')
+                                             n_init=100, assign_labels='discretize', random_state=42)
             user_labels = user_spectral.fit_predict(user_adjacency_matrix)
             
             item_adjacency_matrix = adjacency_array[user_num:, user_num:]
             item_spectral = SpectralClustering(n_clusters=num_clients, affinity='precomputed', 
-                                             n_init=100, assign_labels='discretize')
+                                             n_init=100, assign_labels='discretize', random_state=42)
             item_labels = item_spectral.fit_predict(item_adjacency_matrix)
         elif clustering_method == 'random':
             user_labels = [rd.randint(0, num_clients - 1) for _ in range(user_num)]
@@ -305,12 +305,12 @@ class MakeSubgraph():
         if clustering_method == 'spectral':
             user_adjacency_matrix = adjacency_array[:user_num, :user_num]
             user_spectral = SpectralClustering(n_clusters=num_clients, affinity='precomputed', 
-                                             n_init=100, assign_labels='discretize')
+                                             n_init=100, assign_labels='discretize', random_state=42)
             user_labels = user_spectral.fit_predict(user_adjacency_matrix)
             
             item_adjacency_matrix = adjacency_array[user_num:, user_num:]
             item_spectral = SpectralClustering(n_clusters=num_clients, affinity='precomputed', 
-                                             n_init=100, assign_labels='discretize')
+                                             n_init=100, assign_labels='discretize', random_state=42)
             item_labels = item_spectral.fit_predict(item_adjacency_matrix)
         elif clustering_method == 'random':
             user_labels = [rd.randint(0, num_clients - 1) for _ in range(user_num)]

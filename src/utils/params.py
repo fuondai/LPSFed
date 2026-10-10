@@ -1,5 +1,5 @@
 model = 1           # 0:MF, 1:LGCN
-dataset = 0         # 0:Amazon, 1:Gowalla, 2:ML-1M, 3:Yelp, 4:Tmall
+dataset = 2         # 0:Amazon, 1:Gowalla, 2:ML-1M, 3:Yelp, 4:Tmall
 pred_dim = 64       # predictive embedding dimensionality 
 seed = 42
 
@@ -8,8 +8,8 @@ GPU_INDEX = 0
 DATASET = ['Amazon', 'Gowalla', 'ML-1M', 'Yelp2018', 'Tmall_buy'][dataset]
 # USER_NUM = [52643, 29858, 6022, 31668][dataset]
 # ITEM_NUM = [91599, 40981, 3706, 36602][dataset]
-USER_NUM = [52643, 24070, 5856, 31668, 151194][dataset]
-ITEM_NUM = [61351, 28846, 2995, 27205, 42501][dataset]
+USER_NUM = [52643, 24070, 6022, 31668, 151194][dataset]  # ML-1M fixed: train_data.json has 6022 users
+ITEM_NUM = [61351, 28846, 3043, 27205, 42501][dataset]
 
 RAND_USER_NUM = [13161, 6437, 1506, 7917, 48423][dataset]
 

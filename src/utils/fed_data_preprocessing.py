@@ -4,51 +4,27 @@ import numpy as np
 # Index of user and item in each client is different
     
 def dataset_preprocessing(num_clients, train_datas, test_datas):
-    
-    sorted_interactions = []
-    for i in range(num_clients):
-        sorted_interactions.append(sorted(train_datas[i][1], key=lambda x: x[0]))
-    
-    removed_test_datas = []
-    
-    for i in range(num_clients):
-        unique_users = set(user[0] for user in sorted_interactions[i])
-        mapped_dict_user = {val: idx for idx, val in enumerate(unique_users)}
-        transformed_user = [(mapped_dict_user[item[0]], item[1]) for item in sorted_interactions[i]]
-        
-        mapped_dict_item = {idx: val for idx, val in enumerate(train_datas[i][4])}
-        fliped_dict_item = {val: idx for idx, val in enumerate(train_datas[i][4])}
-        # Filter out items that don't exist in train data's item_nodes
-        transformed_item = [(item[0], fliped_dict_item[item[1]]) for item in transformed_user if item[1] in fliped_dict_item]
-        train_datas[i][1] = transformed_item
-        
-        for sublist in train_datas[i][0]:
-            for idx,val in enumerate(sublist):
-                if val in mapped_dict_item.values():
-                    key = list(mapped_dict_item.keys())[list(mapped_dict_item.values()).index(val)]
-                    sublist[idx] = key
-        
-        # Process test/validation data: map items and filter out items not in train data
-        for sublist in test_datas[i]:
-            if not sublist:  # Skip empty lists
-                continue
-            for idx,val in enumerate(sublist):
-                if val in mapped_dict_item.values():
-                    key = list(mapped_dict_item.keys())[list(mapped_dict_item.values()).index(val)]
-                    sublist[idx] = key
-                # If item not in train data, it will be filtered out later in filtered_values
-        
-        # Filter out items that don't exist in train data's item_nodes
-        # Also handle empty validation/test data
-        filtered_values = []
-        for sublist in test_datas[i]:
-            if not sublist:  # Handle empty lists (e.g., empty validation data)
-                filtered_values.append([])
-            else:
-                filtered_sublist = [val for val in sublist if val in train_datas[i][4]]
-                filtered_values.append(filtered_sublist)
-        removed_test_datas.append(filtered_values)
+    """Map global user/item ids to per-client local ids.
 
+    Local user id = rank of the global user id among the client's subgraph users
+    (same order as the client's train/val/test json rows and the eigenvector rows).
+    Local item id = rank of the global item id among the client's subgraph items.
+    Train data is mapped only once (the function is called for test and for val).
+    Test/val items outside the client's item set are dropped BEFORE mapping.
+    """
+    removed_test_datas = []
+    for i in range(num_clients):
+        item_nodes = train_datas[i][4]
+        g2l_item = {g: l for l, g in enumerate(item_nodes)}
+        if len(train_datas[i]) < 7:  # not mapped yet
+            user_ids = train_datas[i][5]
+            g2l_user = {g: l for l, g in enumerate(user_ids)}
+            train_datas[i][1] = [(g2l_user[u], g2l_item[it]) for (u, it) in train_datas[i][1]
+                                 if u in g2l_user and it in g2l_item]
+            train_datas[i][0] = [[g2l_item[it] for it in sub if it in g2l_item] for sub in train_datas[i][0]]
+            train_datas[i].append(True)  # mapped flag
+        removed_test_datas.append([[g2l_item[v] for v in sub if v in g2l_item] if sub else []
+                                   for sub in test_datas[i]])
     return removed_test_datas
 
 def testset_preprocessing(num_clients, train_datas, test_datas, TOP_K, TEST_USER_BATCH, KEEP_PORB):
